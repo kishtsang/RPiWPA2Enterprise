@@ -1,0 +1,15 @@
+$ sudo nano /etc/network/interfaces
+
+// In the file add the following lines
+
+auto lo
+iface eth0 inet dhcp
+
+auto wlan0
+allow-hotplug wlan0
+iface wlan0 inet dhcp
+ pre-up wpa_supplicant -B -D wext -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
+ post-down killall -q wpa_supplicant
+ 
+/// Save your changes before exiting the file
+/// You can check your changes by using $ cat /etc/network/interfaces
