@@ -1,0 +1,28 @@
+$ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+
+// In the file add the following lines
+
+network={
+  ssid="NAME OF THE NETWORK"
+  priority=1
+  proto=RSN
+  key_mgmt=WPA-EAP
+  pairwise=CCMP
+  auth_alg=OPEN
+  eap=PEAP
+  identity="YOUR USERNAME"
+  password="YOUR PASSWORD IN CLEAR TEXT"
+  phase1="peaplabel=0"
+  phase2="auth=MSCHAPV2"
+}
+
+/// instead of clear text, a password hash can be used. See the instructions below:
+
+In terminal:
+echo -n TYPEYOURPASSWORD | iconv -t utf16le | openssl md4
+
+/// Copy your Hash in the wpa_supplicant.conf
+
+password=hash:COPYYOURHASHHERE
+
+//// Save your file
