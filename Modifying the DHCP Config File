@@ -1,0 +1,10 @@
+$ sudo nano /etc/dhcpcd.conf
+
+// In the file add the following lines
+
+interface wlan0
+env ifwireless = 1
+env wpa_supplicant_driver = wext, nl80211
+
+/// Save your changes before exiting the file
+/// You can check your changes by using $ cat /etc/dhcpcd.conf
