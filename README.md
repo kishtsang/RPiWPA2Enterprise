@@ -57,15 +57,16 @@ env wpa_supplicant_driver = wext, nl80211
 ```
 Save your changes
 
-Reboot your RPi. Upon restart the default network manager should now be disabled.
+Reboot your RPi. Upon restart you will notice (in the GUI) that the default network manager of Raspberry Pi OS has been disabled.
 
-**3. Modify the WiFi Config File
+**3. Modify the WiFi Config File**
 
 ```
 $ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 ```
 
 Again, add the following lines:
+
 ```
 network={
   ssid="NAME OF THE NETWORK"
@@ -75,12 +76,13 @@ network={
   pairwise=CCMP
   auth_alg=OPEN
   eap=PEAP
-  identity="YOUR USERNAME"
+  identity="YOUR USERNAME" *
   password="YOUR PASSWORD IN CLEAR TEXT"
   phase1="peaplabel=0"
   phase2="auth=MSCHAPV2"
 }
 ```
+* Quotation marks are required
 
 **Optional**
 Instead of clear text, a password hash can be used for better security.
@@ -91,3 +93,5 @@ Copy your Hash in the wpa_supplicant.conf
 ```
 password=hash:COPYYOURHASHHERE
 ```
+
+
