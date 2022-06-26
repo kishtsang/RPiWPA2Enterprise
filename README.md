@@ -82,8 +82,11 @@ network={
 ```
 * Quotation marks are required
 
+
+
 **Optional**
-Instead of clear text, a password hash can be used for better security.
+
+Instead of clear text, a password hash can be used for increased security.
 ```
 echo -n TYPEYOURPASSWORD | iconv -t utf16le | openssl md4
 ```
