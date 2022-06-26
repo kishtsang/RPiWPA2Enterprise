@@ -2,24 +2,21 @@
 Guide on how to connect your Raspberry Pi to a WPA2-Enterprise Network
 
 # Introduction
-The Raspberry Pi (RPi) is a low-cost Single Board Computer. Since it’s original release in 2012, a total of over 36 million devices have been sold so far, making it one of the best selling computers of all time. Despite the original objective to provide a low-cost computing platform enabling people to explore computing and learn to write code, the RPi owes its popularity to its low price, connectivity and versatility. This has allowed both professionals and hobbyist to make use of the RPi in various applications ranging from simple projects to full commercial products. 
+The Raspberry Pi (RPi) is a low-cost Single Board Computer. Since its original release in 2012, a total of over 37 million devices have been sold so far, making it one of the best-selling computers of all time. Despite the original objective to provide a low-cost computing platform enabling people to explore computing and learn to write code, the RPi owes its popularity to its low price, connectivity, and versatility. This has allowed both professionals and hobbyists to make use of the RPi in various applications ranging from simple projects to full commercial products. 
 
-In healthcare, recent advancements of sensor technology and the application of “internet of things” (IoT) devices hold a potential to transform healthcare. The use of these devices allows for improved insight of disease by gathering and exchanging data with other systems over the Internet without any human intervention. A good example is remote patient monitoring, which has seen a substantial uprise fueled by the recent COVID-19 pandemic. The application of IoT devices may have a substantial impact on reducing healthcare costs and improving treatment outcomes. However, prototyping these kind of solutions do demand all sorts of different sensors with different types of interfaces. The RPi may offer a low-cost and scalable platform to develop IoT solutions due to its abundant connectivity options (USB, GPIO, etc )and open source software which allows for easy integration of different protocols.  
+In healthcare, recent advancements in sensor technology and the application of “internet of things” (IoT) devices hold the potential to transform healthcare. The use of these devices allows for improved insight into disease by gathering and exchanging data with other systems over the Internet without human intervention. A good example is remote patient monitoring, which has seen a substantial uprise, fuelled by the recent COVID-19 pandemic. The application of IoT devices may have a considerable impact, reducing healthcare costs and improving treatment outcomes. However, prototyping these kinds of solutions does require all sorts of different sensors with different types of interfaces. The RPi offers a low-cost and scalable platform to develop IoT solutions due to its abundant connectivity options (USB, GPIO, etc.) and open-source software which allows for easy integration of different protocols.  
 
-Despite this, using a RPi in a hospital environment is not always easy. Especially when it comes to WiFi connectivity without a dedicated IoT-network. The RPi is shipped without an operating system (OS), allowing the end-user to choose their OS to suit their needs. Raspberry Pi OS is a linux-based operating system optimized for the RPi and provides an adequate choice OS for the RPi. There a multiple variations of the OS including 64- and 32-bit versions and versions with and without a graphic user interface (GUI). Raspberry Pi OS by default does not support enterprise WiFi security (WPA2-Enterpise and 802.1X), a common standard in hospital wireless networks.
+Despite this, deployment of Raspberry Pi’s in a hospital environment for prototyping is not an easy task. Especially when it comes to WiFi connectivity without a dedicated IoT network. Therefore, despite its potential, the use of RPi in clinical settings has been moderate so far.,,, However, there is a solution to this problem.
 
 # Solution
 
-As Raspberry Pi OS is based on Linux, it can be configured to allow connectivity to WPA2-Enterprise network using the terminal and tweaking the network interface file, DHCP and WiFi config files.  Therefore, I put together this guide on how to modify these files allowing you to connect your RPi to a WPA2-Enterprise network.
+The RPi is shipped without an operating system (OS), allowing the end-user to choose their OS to suit their needs. Raspberry Pi OS (formerly known as Raspbian) is a Linux-based operating system optimized for the RPi. There are multiple variations of the OS, including 64- and 32-bit versions and versions with and without a graphic user interface (GUI). By default, Raspberry Pi OS does not support enterprise WiFi security (WPA2-Enterprise and 802.1X), a common standard in hospital wireless networks.
+
+As Raspberry Pi OS is based on Linux, it can be configured to allow connectivity to WPA2-Enterprise networks using the terminal and tweaking the network interface file, DHCP- , and WiFi-config files. Therefore, I put together this guide on how to modify these files allowing you to connect your RPi to a WPA2-Enterprise network.
 
 # Guide
 
-This is an instruction on how to connect your Raspberry Pi to a WPA2-Enterprise secured Wireless Network. This requires the use of terminal.
-
-
-Disclaimer: Always inform you IT-department of your intentions
-
-There are three steps involved:
+This guide involves three steps:
 **1. Modify the Network Interface File**
 
 ```
