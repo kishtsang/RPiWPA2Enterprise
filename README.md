@@ -17,6 +17,7 @@ As Raspberry Pi OS is based on Linux, it can be configured to allow connectivity
 # Guide
 
 This guide involves three steps:
+
 **1. Modify the Network Interface File**
 
 ```
